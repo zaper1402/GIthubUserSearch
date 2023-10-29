@@ -23,11 +23,11 @@ const UserSearch = () => {
         setLoading(true);
       }
 
-  
+  // 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
       try {
         const response = await fetch(`https://api.github.com/search/users?q=${value}&sort=followers`, {
           headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
           }
         });
     
@@ -40,7 +40,7 @@ const UserSearch = () => {
           for(let i=0;i<data.items.length;i++){
             const fresponse = await fetch(data.items[i].followers_url, {
               headers: {
-                'Authorization': 'Bearer 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',
+                'Authorization': 'Bearer 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',
               }
             });
             if (!fresponse.ok) {
