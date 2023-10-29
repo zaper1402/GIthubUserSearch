@@ -1,0 +1,32 @@
+name: Github User Search
+on:
+  push:
+    branches:
+	- master
+	- gh-pages 
+	
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build website
+        run: npm run build
+
+      - name: Github User Search
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+          - uses: actions/github-script@v6
+            with:
+              script: |
+                github.actions.checkout();
+                git config --global user.email "ashirkul@gmail.com	";
+                git config --global user.name "zaper1402";
+                git add -A;
+                git commit -m "Deploy website";
+                git push --force origin main;
