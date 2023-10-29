@@ -26,7 +26,7 @@ const UserSearch = () => {
       try {
         const response = await fetch(`https://api.github.com/search/users?q=${value}&sort=followers`, {
           headers: {
-            'Authorization': `Bearer ${secrets.GITHUB_TOKEN}`,
+            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
           }
         });
     
@@ -39,7 +39,7 @@ const UserSearch = () => {
           for(let i=0;i<data.items.length;i++){
             const fresponse = await fetch(data.items[i].followers_url, {
               headers: {
-                'Authorization': `Bearer ${secrets.GITHUB_TOKEN}`,
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
               }
             });
             if (!fresponse.ok) {
