@@ -9,6 +9,7 @@ const UserSearch = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [empty, setEmpty] = useState(null);
+    const token = process.env.GITHUB_TOKEN;
   
     const searchUsers = async (value) => {
       setQuery(value);
@@ -26,7 +27,7 @@ const UserSearch = () => {
       try {
         const response = await fetch(`https://api.github.com/search/users?q=${value}&sort=followers`, {
           headers: {
-            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+            'Authorization': `Bearer ${token}`,
           }
         });
     
@@ -39,7 +40,7 @@ const UserSearch = () => {
           for(let i=0;i<data.items.length;i++){
             const fresponse = await fetch(data.items[i].followers_url, {
               headers: {
-                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Authorization': `Bearer ${token}`,
               }
             });
             if (!fresponse.ok) {

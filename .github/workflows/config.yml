@@ -1,7 +1,8 @@
 name: Github User Search
+
 on:
   push:
-    branches:  [ "master","gh-pages" ]
+    branches: ["main", "gh-pages"]
 
 jobs:
   build:
@@ -10,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use the GITHUB_TOKEN secret
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: echo "${{ secrets.GITHUB_TOKEN }}"
