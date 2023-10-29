@@ -1,3 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table td {
+  font-size: 14px;
+  
+}
+
+table td:first-child {
+  font-weight: bold;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.loading-message {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.no-results-message {
+  font-size: 16px;
+  margin-top: 20px;
+  font-style: italic;
+}
+
 .App {
   text-align: center;
 }
@@ -27,6 +96,37 @@
 .App-link {
   color: #61dafb;
 }
+
+.circular-image {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+
+.circular-image-header {
+  height: 100px;
+  margin-top:40px;
+  object-fit: cover;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.github-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 
 @keyframes App-logo-spin {
   from {
