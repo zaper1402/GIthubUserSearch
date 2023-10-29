@@ -52,7 +52,7 @@ const UserSearch = () => {
             data.items[i]["followers"] = usersWithFollowersCount;
           }
             
-          setResults(data.items);
+          setResults(data.items); 
         } else {
           setResults([]);
         }
