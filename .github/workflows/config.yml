@@ -1,0 +1,13 @@
+name: Github User Search
+on:
+  push:
+    branches:  [ "master","gh-pages" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use the GITHUB_TOKEN secret
+        run: echo ${{ secrets.GITHUB_TOKEN }}
